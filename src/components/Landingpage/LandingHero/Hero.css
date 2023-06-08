@@ -1,0 +1,43 @@
+.landing-page{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    min-height: 90vh;
+    background: linear-gradient(to right, #00095e 0%, #0c0c1f 100%);
+    padding: 3rem 5vw;
+}
+
+/* .landing-page-image{
+    --size: 60rem;
+    display: block;
+    padding: 1rem;
+    width: var(--size);
+    min-width: var(--size);
+    height: 40rem;
+} */
+
+.landing-page-left--heading{
+    font-size: 5rem;
+    font-weight: 600;
+    color: var(--color-white);
+    margin-bottom: 2rem;
+}
+
+.landing-page-left--text{
+    font-size: 1.8rem;
+    color: var(--color-white);
+    font-weight: 400;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+}
+
+.landing-page-left--link{
+    text-decoration: none;
+    display: inline-block;
+    padding: 2rem 4rem;
+    background-color: var(--color-secondary);
+    color: var(--color-white);
+    font-weight: 700;
+    border-radius: 100px;
+    text-transform: capitalize;
+}
