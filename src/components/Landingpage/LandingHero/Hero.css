@@ -1,43 +1,109 @@
+
 .landing-page{
     display: flex;
     align-items: center;
     justify-content: space-around;
-    min-height: 90vh;
-    background: linear-gradient(to right, #00095e 0%, #0c0c1f 100%);
-    padding: 3rem 5vw;
+    gap: 2rem;
+    min-height: 70vh;
+    
+}
+.landing-page-right {
+    margin-left: 10rem;
+    width: 60%;
+    position: relative;
+    top: 5rem;
+}
+.landing-page-left {
+    /* border: 1px solid #ff0000; */
+    margin-left: 5rem;
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.landing-page-right-image{
+    --size: 30rem;
+    width: var(--size);
+    height: 20rem;
+    min-width: var(--size);
+    /* height:5%; */
+    margin-top: 10%;
+    border-radius: 8px;
+    box-shadow: 0 0 4px rgba(0,0,0,0.2);
+    z-index: -1;
 }
 
-/* .landing-page-image{
-    --size: 60rem;
-    display: block;
-    padding: 1rem;
+.img-abs{
+    position: absolute;
+    --size: 30rem;
     width: var(--size);
+    height: 20rem;
     min-width: var(--size);
-    height: 40rem;
-} */
+    top: -18rem;
+    right: 20rem;
+}
+
+.img-2 {
+   z-index: 1;
+   left: 5rem;
+}
 
 .landing-page-left--heading{
-    font-size: 5rem;
+    /* text-align: center; */
+    font-size: 3rem;
     font-weight: 600;
     color: var(--color-white);
-    margin-bottom: 2rem;
+    margin: 0;
+    text-transform: capitalize;
 }
 
 .landing-page-left--text{
-    font-size: 1.8rem;
+    font-size: 1.5rem;
+    /* text-align: center; */
     color: var(--color-white);
     font-weight: 400;
-    line-height: 1.6;
-    margin-bottom: 2rem;
+    line-height: 1.5;
+    margin-bottom: 1rem;
 }
 
 .landing-page-left--link{
     text-decoration: none;
     display: inline-block;
-    padding: 2rem 4rem;
-    background-color: var(--color-secondary);
+    /* background: var(--color-blue-dark); */
+    width: 50%;
+    text-align: center;
+    padding: 1rem ;
+    margin-right: 10rem;
+    border: 1px solid var(--color-white);
     color: var(--color-white);
     font-weight: 700;
-    border-radius: 100px;
-    text-transform: capitalize;
+    border-radius: 8px;
+    position: relative;
+    transition: all .5s ease;
+} 
+
+.landing-page-left--link:hover {
+    
+    
+    color: var(--color-blue-dark);
+}
+   
+
+.landing-page-left--link::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 101%;
+    background-color: var(--color-secondary);
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transition: all .5s ease;
+    border-radius: 8px;
+    /* transform-origin: left; */
+}
+
+.landing-page-left--link:hover::after {
+    width: 101%;
 }

@@ -1,4 +1,5 @@
 import './Hero.css'
+import pic from '../../../assets/images/prompt 1.jpg'
 
 function Hero() {
   return (
@@ -10,10 +11,13 @@ function Hero() {
         <p className="landing-page-left--text">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam tempora et sed quas aspernatur, perspiciatis repudiandae quasi molestiae explicabo ducimus?
         </p>
-        <a href="" className="landing-page-left--link">Get started</a>
+        <a href="" className="landing-page-left--link">SignUp</a>
     </div>
-
-    {/* <img src={} alt="" className="landing-page-image" /> */}
+      <div className="landing-page-right">
+        <img src={pic} alt="" className="landing-page-right-image img-abs" />
+        <img src={pic} alt="" className="landing-page-right-image img-2" />
+      </div>
+    
     
 </section>
   )
