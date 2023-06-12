@@ -23,7 +23,7 @@
     align-items: center;
 }
 .landing-page-right-image{
-    --size: 30rem;
+    --size: 40rem;
     width: var(--size);
     height: 20rem;
     min-width: var(--size);
@@ -36,12 +36,12 @@
 
 .img-abs{
     position: absolute;
-    --size: 30rem;
+    --size: 40rem;
     width: var(--size);
     height: 20rem;
     min-width: var(--size);
     top: -18rem;
-    right: 20rem;
+    right: 10rem;
 }
 
 .img-2 {
@@ -74,6 +74,7 @@
     width: 50%;
     text-align: center;
     padding: 1rem ;
+    margin-top: 2rem;
     margin-right: 10rem;
     border: 1px solid var(--color-white);
     color: var(--color-white);

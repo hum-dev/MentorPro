@@ -31,12 +31,13 @@ html, body{
 }
 :root{
   --color-blue-dark: #0c0c22;
-  --color-blue-light: #0b2056;
-  --heading-color: #232f55;
   --texts-color: #9da1a7;
   --color-primary: #03787c;
   --color-secondary: #49E0E6;
+  --color-tertiary: #015958;
   --color-white: #fff;
+  --color-green-dark: #023535;
+  --color-secondary-dark: #008F8C;
 }
 
 body{
