@@ -1,8 +1,12 @@
 import './Hero.css'
 import pic from '../../../assets/images/prompt 1.jpg'
+import { Link } from "react-router-dom"
+import NavHero from '../LandingNav/NavHero'
 
 function Hero() {
   return (
+    <div >
+<NavHero />
     <section className="landing-page">
     <div className="landing-page-left">
         <h2 className="landing-page-left--heading">
@@ -11,7 +15,8 @@ function Hero() {
         <p className="landing-page-left--text">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam tempora et sed quas aspernatur, perspiciatis repudiandae quasi molestiae explicabo ducimus?
         </p>
-        <a href="" className="landing-page-left--link">SignUp</a>
+        <Link to = "/SignUp" ><a href="" className="landing-page-left--link">SignUp</a></Link>
+        
     </div>
       <div className="landing-page-right">
         <img src={pic} alt="" className="landing-page-right-image img-abs" />
@@ -20,6 +25,8 @@ function Hero() {
     
     
 </section>
+    </div>
+      
   )
 }
 

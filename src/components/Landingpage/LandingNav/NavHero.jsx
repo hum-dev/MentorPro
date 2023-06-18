@@ -1,27 +1,27 @@
-import './NavHero.css'
-import logo from '../../../assets/images/M logo.png'
+import './NavHero.css';
+import logo from '../../../assets/images/M logo.png';
+import { Link } from 'react-router-dom';
 
 function NavHero() {
   return (
     <header className="landing-nav">
-       <img src={logo} alt="" className="logo" />
-    {/* <h2 className="logo">MentorPro</h2> */}
-    <nav className="landing-nav-header">
+      <img src={logo} alt="" className="logo" />
+      <nav className="landing-nav-header">
         <ul className="landing-nav-header-list">
-{/* 
-            <li className="landing-nav-header-list--item"><a href="">mentor</a></li>
-            <li className="landing-nav-header-list--item"><a href="">mentee</a></li> */}
-
-            <li className="landing-nav-btn">
-                <div>
-                    <a href="" className="landing-nav-btn-hero landing-nav-btn-sec">log in</a>
-                    <a href="" className="landing-nav-btn-hero landing-nav-btn-pri">sign up </a>
-                </div>
-            </li>
+          <li className="landing-nav-btn">
+            <div>
+              <Link to="/Login" className="landing-nav-btn-hero landing-nav-btn-sec">
+                log in
+              </Link>
+              <Link to="/SignUp" className="landing-nav-btn-hero landing-nav-btn-pri">
+                sign up
+              </Link>
+            </div>
+          </li>
         </ul>
-    </nav>
-</header>
-  )
+      </nav>
+    </header>
+  );
 }
 
-export default NavHero
+export default NavHero;

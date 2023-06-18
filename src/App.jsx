@@ -1,20 +1,25 @@
-
 import './App.css'
-import NavHero from './components/Landingpage/LandingNav/NavHero'
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
+
 import Hero from './components/Landingpage/LandingHero/Hero'
+import Login from './components/Account/Login/Login'
+import SignUp from './components/Account/SignUp/SignUp'
+import Footer from './components/Footer/Footer'
 
 function App() {
-
-
   return (
-    <>
-      <div>
-        {/* <h1 className="title">Welcome to MentorPro</h1> */}
-      </div>
-      <NavHero />
-      <Hero />
-    </>
-  )
+    <BrowserRouter>
+      <>
+        
+        <Routes>
+          <Route path="/" element={<Hero />} />
+          <Route path="/Login" element={<Login />} />
+          <Route path="/SignUp" element={<SignUp />} />
+        </Routes>
+        <Footer/>
+      </>
+    </BrowserRouter>
+  );
 }
 
-export default App
+export default App;
