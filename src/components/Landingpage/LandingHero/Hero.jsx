@@ -2,6 +2,7 @@ import './Hero.css'
 import pic from '../../../assets/images/prompt 1.jpg'
 import { Link } from "react-router-dom"
 import NavHero from '../LandingNav/NavHero'
+import SignUpBtn from '../../Buttons/SignUpBtn'
 
 function Hero() {
   return (
@@ -15,7 +16,8 @@ function Hero() {
         <p className="landing-page-left--text">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam tempora et sed quas aspernatur, perspiciatis repudiandae quasi molestiae explicabo ducimus?
         </p>
-        <Link to = "/SignUp" ><a href="" className="landing-page-left--link">SignUp</a></Link>
+        <Link to = "/SignUp" > <SignUpBtn /> </Link>
+        {/* <Link to = "/SignUp" ><a href="" className="landing-page-left--link">SignUp</a></Link> */}
         
     </div>
       <div className="landing-page-right">

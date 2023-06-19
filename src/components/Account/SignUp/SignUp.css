@@ -1,11 +1,25 @@
 .form-container-1 {
+
     width: 400px;
     border-radius: 0.75rem;
     background-color: #0c0c22;
     padding: 2rem;
     color: rgba(243, 244, 246, 1);
-    margin: 10rem auto;
-    height: 600px;
+    
+    margin:20px auto;
+    height: 550px;
+    
   }
 
-  
+  .social-message {
+    margin-bottom: 5px;
+  }
+
+  .social-icons {
+    margin-bottom: 5px;
+  }
+
+  .signup {
+    margin-top: 3px;
+    margin-bottom: 5px;
+  }
