@@ -59,7 +59,7 @@ function Login() {
               </a>
             </div>
           </div>
-          <button className="sign">Sign in</button>
+          <button className="sign"> <span>Sign in</span> </button>
         </form>
         <div className="social-message">
           <div className="line"></div>

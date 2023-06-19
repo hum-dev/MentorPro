@@ -6,7 +6,7 @@
     padding: 2rem;
     color: rgba(243, 244, 246, 1);
     margin: 10rem auto;
-    height: 400px;
+    /* height: 400px; */
   }
   
   .title {
@@ -73,18 +73,61 @@
   }
   
   .sign {
-    display: block;
+    display: inline-block;
+    position: relative;
     width: 100%;
     background-color: rgba(167, 139, 250, 1);
     padding: 0.75rem;
     text-align: center;
     color: rgba(17, 24, 39, 1);
     border: none;
-    border-radius: 0.375rem;
+    border-radius: 10px;
     font-weight: 600;
     margin-bottom: 10px;
+    overflow: hidden;
+    transition: all 0.5s ease-in;
+    z-index: 1;
     
   }
+
+  .sign::before,
+  .sign::after {
+ content: '';
+ position: absolute;
+ top: 0;
+ width: 0;
+ height: 100%;
+ transform: skew(15deg);
+ transition: all 0.5s;
+ overflow: hidden;
+ z-index: -1;
+}
+
+.sign::before {
+ left: -10px;
+ background: #3e0275;
+}
+
+.sign::after {
+ right: -10px;
+ background: #5a189a;
+}
+
+.sign:hover::before,
+.sign:hover::after {
+ width: 55%;
+}
+
+.sign:hover span {
+ color: #e0aaff;
+ transition: 0.3s;
+}
+
+.sign span {
+ color: #03045e;
+ font-size: 18px;
+ transition: all 0.3s ease-in;
+}
   
   .social-message {
     display: flex;

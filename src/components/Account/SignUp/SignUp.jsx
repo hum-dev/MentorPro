@@ -101,7 +101,7 @@ function SignUp() {
             />
             <p className='err'>{errors.confirmPassword?.message}</p>
           </div>
-          <button className="sign">Sign up</button>
+          <button className="sign"> <span>Sign up</span> </button>
         </form>
         <div className="social-message">
           <div className="line"></div>
