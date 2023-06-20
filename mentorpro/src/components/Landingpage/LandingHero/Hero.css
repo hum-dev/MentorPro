@@ -31,7 +31,7 @@
     margin-top: 10%;
     border-radius: 8px;
     box-shadow: 0 0 4px rgba(0,0,0,0.2);
-    z-index: -1;
+    /* z-index: -1; */
 }
 
 .img-abs{
@@ -42,12 +42,28 @@
     min-width: var(--size);
     top: -18rem;
     right: 10rem;
+    z-index: -1;
+    transition: all 0.5s ease-out;
 }
+
+.img-abs:hover {
+    transform: scale(0.8);
+  }
+
+.img-1:hover {
+    transform: translate(0, -10px);
+  }
+   
+
 
 .img-2 {
    z-index: 1;
    left: 5rem;
 }
+
+.img-2:hover {
+    transform: translate(0, -10px);
+  }
 
 .landing-page-left--heading{
     /* text-align: center; */
