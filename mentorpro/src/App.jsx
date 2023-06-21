@@ -5,6 +5,9 @@ import Hero from './components/Landingpage/LandingHero/Hero'
 import Login from './components/Account/Login/Login'
 import SignUp from './components/Account/SignUp/SignUp'
 import Footer from './components/Footer/Footer'
+import About from './pages/About/About'
+
+
 
 function App() {
   return (
@@ -16,7 +19,9 @@ function App() {
           <Route path="/Login" element={<Login />} />
           <Route path="/SignUp" element={<SignUp />} />
         </Routes>
+      
         <Footer/>
+        <About/>
       </>
     </BrowserRouter>
   );

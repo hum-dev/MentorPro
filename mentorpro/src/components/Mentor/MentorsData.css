@@ -1,0 +1,46 @@
+/* MyForm.css */
+
+.form-container {
+    max-width: 400px;
+    margin: auto;
+  }
+  
+  .form-group {
+    margin-bottom: 1rem;
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 0.5rem;
+  }
+  
+  input,
+  select,
+  textarea {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-shadow: 3px 3px 10px rgba(0,0,0,1),
+    -1px -1px 6px rgba(255, 255, 255, 0.4);
+    
+  }
+  
+    input:focus,
+    select:focus,
+    textarea:focus {
+      outline: none;
+      border-color: #007bff;
+      box-shadow: 3px 3px 10px rgba(0,0,0,1),
+      -1px -1px 6px rgba(255, 255, 255, 0.4);
+    }
+   
+  .sign:hover {
+    background-color: #0069d9;
+  }
+  
+  .sign:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+  }
+  
