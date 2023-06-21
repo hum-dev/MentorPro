@@ -1,8 +1,11 @@
 
 .about {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     grid-gap: 20px;
+    justify-items: center;
+    margin-bottom: 3rem;
+    border-bottom: 1px solid #000;
 }
 .card {
     
@@ -12,7 +15,9 @@
     color: #2e2d31;
     background: #131313;
     overflow: hidden;
+    margin-bottom: 3rem;
     border-radius: 20px;
+    
   }
   
   .temporary_img {
@@ -34,7 +39,7 @@
       /* edit the width to fit card */
     width: 100%;
     padding: 20px;
-    background: whitesmoke;
+    background: rgb(15, 228, 240);
     border-top-left-radius: 20px;
       /* edit here to change the height of the content box */
     transform: translateY(150px);
@@ -50,7 +55,7 @@
     height: 100px;
     transform: rotate(-175deg);
     border-radius: 50%;
-    box-shadow: inset 48px 48px #f2f2f2;
+    box-shadow: inset 48px 48px #b5e9e3;
   }
   
   .card_title {

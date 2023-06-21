@@ -2,8 +2,8 @@
     
     border-top: 1px solid #1bf8e5 ;
     padding: .9rem 0 0;
-    position: absolute;
-    bottom: 0;
+    /* position: absolute; */
+    /* bottom: 0; */
     width: 100%;
     /* text-align: center; */
     color: var(--color-blue-dark);
@@ -152,9 +152,10 @@
     transition: .2s ease-in-out;
   }
   
-  .discord {
-    margin-left: -.9em;
-    fill: #8c9eff;
+  .linkedin {
+    margin-left: -.4em;
+    fill: #0072b1;
+    border-radius: 50%;
   }
   
   .card1:hover {
@@ -190,9 +191,9 @@
   .card4:hover {
     cursor: pointer;
     scale: 1;
-    background-color: #8c9eff;
+    background-color: #0072b1;
   }
   
-  .card4:hover .discord {
+  .card4:hover .linkedin {
     fill: white;
   }

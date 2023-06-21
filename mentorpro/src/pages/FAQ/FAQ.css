@@ -1,0 +1,57 @@
+.faqs-container {
+    width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    
+  }
+  
+  .faqs-container h2 {
+   margin-left: 10rem;
+    font-size: 24px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #000;
+  }
+  
+  .faqs-list {
+    list-style: none;
+    padding: 0;
+    border-bottom: 1px solid #000;
+  }
+  
+  .faq {
+    padding: 10px;
+    cursor: pointer;
+  }
+  
+  .faq h3 {
+    display: flex;
+    align-items: center;
+    margin: 0;
+    font-weight: bold;
+    padding: 5px 0;
+  }
+  
+  .faq .arrow-icon {
+    width: 10px;
+    height: 10px;
+    margin-left: 5px;
+    border: solid #000;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+    transition: transform 0.3s ease;
+  }
+  
+  .faq p {
+    margin: 0;
+    display: none;
+    padding: 5px 0;
+  }
+  
+  .faq.active .arrow-icon {
+    transform: rotate(225deg);
+  }
+  
+  .faq.active p {
+    display: block;
+  }
+  

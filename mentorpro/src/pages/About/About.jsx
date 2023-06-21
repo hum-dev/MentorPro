@@ -1,9 +1,19 @@
 import './About.css'
-import pic from '../../assets/images/prompt 1.jpg'
+import pic from '../../assets/images/About.jpg'
+// import Hero from '../Home/Hero';
+import NavBar from '../../components/Navigations/NavBar';
+import Home from '../Home/Home';
+
 
 function About() {
   
     return (
+      <>
+      <NavBar />
+      <Home />
+      {/* <Hero /> */}
+
+      <h1 className="title">About</h1>
       <div className="about">
         <article className="card">
           <div className="temporary_img"><img src={pic} alt="" /></div>
@@ -25,12 +35,12 @@ function About() {
           <div className="temporary_img"><img src={pic} alt="" /></div>
           <div className="card_content">
             <span className="card_title">How It Works</span>
-            <span className="card_subtitle">Create an Account</span>
+            <span className="card_subtitle">Create an Account Don`t be left back </span>
             <p className="card_description">
               Start by registering an account on our platform. Provide your
               basic information and set up your profile. This will help us
                 understand your interests and goals, and match you with the right
-                mentor.
+                mentor, in your field of interest, to help you achieve your goals.
 
             </p>
           </div>
@@ -40,12 +50,12 @@ function About() {
           <div className="temporary_img"><img src={pic} alt="" /></div>
           <div className="card_content">
             <span className="card_title">What Next</span>
-            <span className="card_subtitle">Begin Mentorship Journey</span>
+            <span className="card_subtitle">Begin Mentorship, a Journey to success</span>
             <p className="card_description">
               Once you`ve created your profile we will do a matchup for mentees
               with mentors to march their interests, start your mentorship
               journey. Schedule meetings, engage in discussions, and collaborate
-              with one another to achieve your objectives.
+              with one another to achieve your objectives, and grow personally
             </p>
           </div>
         </article>
@@ -67,6 +77,7 @@ function About() {
           </div>
         </article>
       </div>
+      </>
     );
     }
 export default About

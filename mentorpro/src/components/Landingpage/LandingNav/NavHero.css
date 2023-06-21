@@ -1,8 +1,9 @@
-.landing-nav{
+.landing-nav-hero{
     display: flex;
     align-items: center;
     justify-content: space-around;
     padding-top: 1rem;
+    
     
     /* background: linear-gradient(to right, #00095e 0%, #0c0c1f 100%); */
     color: var(--color-white);
@@ -10,13 +11,15 @@
     width: 100%;
 }
 
-.logo {
+.hero-logo {
     width: 20rem;
+    
 }
-.landing-nav-header-list{
+.landing-nav-header-list-hero{
     list-style: none;
     display: flex;
     align-items: center;
+   
 }
 
 .landing-nav-header-list--item a{

@@ -23,7 +23,7 @@
     align-items: center;
 }
 .landing-page-right-image{
-    --size: 40rem;
+    --size: 35rem;
     width: var(--size);
     height: 20rem;
     min-width: var(--size);
@@ -31,12 +31,13 @@
     margin-top: 10%;
     border-radius: 8px;
     box-shadow: 0 0 4px rgba(0,0,0,0.2);
+    opacity: 0.8;
     /* z-index: -1; */
 }
 
 .img-abs{
     position: absolute;
-    --size: 40rem;
+    --size: 35rem;
     width: var(--size);
     height: 20rem;
     min-width: var(--size);

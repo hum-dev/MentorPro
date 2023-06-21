@@ -2,9 +2,11 @@ import './Login.css'
 import { useForm} from 'react-hook-form'
 import { yupResolver } from '@hookform/resolvers/yup'
 import * as yup from 'yup'
-import {Link} from 'react-router-dom'
+import {Link, useNavigate} from 'react-router-dom'
+
 
 function Login() {
+  const navigate = useNavigate()
 
     const Schema = yup.object().shape({
       username: yup.string().required("Username is required"),
@@ -25,10 +27,12 @@ function Login() {
 
     const SendDataToServer = (data) => {
       console.log(data);
+      navigate('/Testimonial')
     };
 
   return (
     <>
+    
       <div className="form-container">
         <p className="title">Login</p>
         <form className="form" onSubmit={handleSubmit(SendDataToServer)}>

@@ -1,0 +1,108 @@
+
+.landing-page{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    gap: 2rem;
+    min-height: 70vh;
+    border-bottom: 1px solid #000;
+    /* background-color: #03787c; */
+}
+.landing-page-right {
+    margin-left: 10rem;
+    width: 60%;
+    position: relative;
+    top: 5rem;
+}
+.landing-page-left {
+    /* border: 1px solid #ff0000; */
+    margin-left: 5rem;
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.landing-page-right-image{
+    --size: 35rem;
+    width: var(--size);
+    height: 20rem;
+    min-width: var(--size);
+    /* height:5%; */
+    margin-top: 10%;
+    border-radius: 8px;
+    box-shadow: 0 0 4px rgba(0,0,0,0.2);
+    opacity: 0.8;
+    /* z-index: -1; */
+}
+
+.img-abs{
+    position: absolute;
+    --size: 35rem;
+    width: var(--size);
+    height: 20rem;
+    min-width: var(--size);
+    top: -18rem;
+    right: 10rem;
+    z-index: -1;
+    transition: all 0.5s ease-out;
+}
+
+.img-abs:hover {
+    transform: scale(0.8);
+  }
+
+.img-1:hover {
+    transform: translate(0, -10px);
+  }
+   
+
+
+.img-2 {
+   z-index: 1;
+   left: 5rem;
+}
+
+.img-2:hover {
+    transform: translate(0, -10px);
+  }
+
+.landing-page-left--heading{
+    /* text-align: center; */
+    font-size: 3rem;
+    font-weight: 600;
+    color: var(--color-white);
+    margin: 0;
+    text-transform: capitalize;
+}
+
+.landing-page-left--text{
+    font-size: 1.5rem;
+    /* text-align: center; */
+    color: var(--color-white);
+    font-weight: 400;
+    line-height: 1.5;
+    margin-bottom: 1rem;
+}
+
+.landing-page-left--link{
+    text-decoration: none;
+    
+    /* display: inline-block; */
+    /* background: var(--color-blue-dark); */
+    width: 100%;
+    text-align: center;
+    padding: 1rem ;
+    margin-top: 2rem;
+    margin-right: 10rem;
+    /* border: 1px solid var(--color-white); */
+    color: var(--color-white);
+    font-weight: 700;
+    border-radius: 8px;
+    position: relative;
+    transition: all .5s ease;
+} 
+
+
+
+
