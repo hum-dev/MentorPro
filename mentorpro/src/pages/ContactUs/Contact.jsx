@@ -23,7 +23,7 @@ function Contact() {
     return (
       <>
         <div className="contact-section">
-          <h2 className="title">Quick Contact</h2>
+          <h2 className="title-1">Quick Contact</h2>
           <div className="contact-container">
             <div className="contact-form">
               <input

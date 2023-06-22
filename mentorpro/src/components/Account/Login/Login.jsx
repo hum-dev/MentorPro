@@ -2,7 +2,11 @@ import './Login.css'
 import { useForm} from 'react-hook-form'
 import { yupResolver } from '@hookform/resolvers/yup'
 import * as yup from 'yup'
+import Axios from 'axios'
+
 import {Link, useNavigate} from 'react-router-dom'
+import { toast } from 'react-toastify';
+import "react-toastify/dist/ReactToastify.css";
 
 
 function Login() {
@@ -26,9 +30,23 @@ function Login() {
     });
 
     const SendDataToServer = (data) => {
-      console.log(data);
-      navigate('/Testimonial')
+      Axios.post("http://localhost:8081/auth/login", data)
+      .then(({data}) => {
+        if(data.token) {
+          
+          navigate('/Home')
+
+        }
+      })
+      .catch(({response}) => {
+        const error = response.data.message;
+        toast.error(error);
+      });
+        
+      
+      
     };
+    toast.success("Logged in successfully");
 
   return (
     <>
@@ -45,7 +63,8 @@ function Login() {
               placeholder="Enter Username"
               {...register("username")}
             />
-            <p className='err'>{errors.username?.message}</p>
+            {/* <p className='err'>{errors.username?.message}</p> */}
+            {errors.username && toast.error(errors.username?.message)}
           </div>
           <div className="input-group">
             <label htmlFor="password">Password</label>
@@ -56,7 +75,8 @@ function Login() {
               placeholder="Enter Password"
               {...register("password")}
             />
-            <p className='err'>{errors.password?.message}</p>
+            {/* <p className='err'>{errors.password?.message}</p> */}
+            {errors.password && toast.error(errors.password?.message)}
             <div className="forgot">
               <a rel="noopener noreferrer" href="#">
                 Forgot Password ?

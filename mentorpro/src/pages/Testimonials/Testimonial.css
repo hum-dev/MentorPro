@@ -29,7 +29,7 @@
   background-color:#f8f8f8;
   }
 
-.title {
+.title-1 {
   text-align: center;
   font-size: 30px;
   font-weight: 400;
@@ -87,7 +87,9 @@
 }
 
 .pfp {
-  border-radius: 35em;
+  width:70%; 
+ 
+  border-radius: 50%;
   fill: #09ebf7;
 }
 

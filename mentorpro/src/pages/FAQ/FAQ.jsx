@@ -28,7 +28,7 @@ function FaQ() {
   return (
     <>
     <div className="faq-section">
-    <h2 className='title'>Frequently Asked Questions</h2>
+    <h2 className='title-1'>Frequently Asked Questions</h2>
      <div className="faqs-container">
       
       <div className="faqs-list">

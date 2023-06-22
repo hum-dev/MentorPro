@@ -147,14 +147,14 @@ export const login = async (req, res) => {
         let pool = await sql.connect(config.sql);
         const result = await pool.request()
             .input('username', sql.VarChar, username)
-            .query(`SELECT * FROM Users WHERE username = @username`);
+            .query('SELECT * FROM Users WHERE username = @username');
         const user = result.recordset[0];
         if (!user) {
-            res.status(401).json({ message: 'Authetication failed.  User not found!' });
+            res.status(401).json({ message: 'Authetication failed.  Wrong Credentials!' });
         } else {
             const isPasswordCorrect = bcrypt.compareSync(password, user.password);
             if (!isPasswordCorrect) {
-                res.status(401).json({ message: ' Authetication failed Wrong Password!' });
+                res.status(401).json({ message: ' Authetication failed Wrong Credentials!' });
             } else {
                 const token = `JWT ${jwt.sign({ username: user.username, email: user.email }, config.jwt_secret, { expiresIn: '1h' })}`;
                 res.status(200).json({ email: user.email,username: user.username,id: user.id , token: token });

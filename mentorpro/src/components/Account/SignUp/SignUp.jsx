@@ -2,9 +2,13 @@ import './SignUp.css';
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import Axios from 'axios';
+import { toast } from 'react-toastify';
+import "react-toastify/dist/ReactToastify.css";
 
 function SignUp() {
+  const navigate = useNavigate();
   const Schema = yup.object().shape({
     username: yup.string().required("Username is required"),
     password: yup
@@ -14,7 +18,7 @@ function SignUp() {
         "Password must be at least 8 characters long and contain at least one uppercase letter, one lowercase letter, one number, and one special character"
       ),
     email: yup.string().email("Invalid email").required("Email is required"),
-    phoneNumber: yup
+    phone_number: yup
       .string()
       .matches(
         /^\+(?:[0-9] ?){6,14}[0-9]$/,
@@ -36,7 +40,20 @@ function SignUp() {
   });
 
   const SendDataToServer = (data) => {
-    console.log(data);
+
+    Axios.post("http://localhost:8081/auth/register" , data)
+    .then((response) => { 
+      response.data.message && toast.message(response.data.message);
+      navigate('/Login')
+    })
+    .catch(({response}) => { 
+      const error = response.data.message;
+      toast.error(error);
+     
+    });
+ 
+    
+
   };
 
   return (
@@ -53,7 +70,8 @@ function SignUp() {
               placeholder="Enter Username"
               {...register("username")}
             />
-            <p className='err'>{errors.username?.message}</p>
+            {/* <p className='err'>{errors.username?.message}</p> */}
+            {errors.username && toast.error(errors.username?.message)}
           </div>
           <div className="input-group">
             <label htmlFor="email">Email</label>
@@ -64,7 +82,8 @@ function SignUp() {
               placeholder="Enter Email"
               {...register("email")}
             />
-            <p className='err'>{errors.email?.message}</p>
+            {/* <p className='err'>{errors.email?.message}</p> */}
+            {errors.email && toast.error(errors.email?.message)}
           </div>
           <div className="input-group">
             <label htmlFor="phoneNumber">Phone Number</label>
@@ -74,9 +93,10 @@ function SignUp() {
               name="phoneNumber"
               id="phoneNumber"
               placeholder="Enter Phone Number"
-              {...register("phoneNumber")}
+              {...register("phone_number")}
             />
-            <p className='err'>{errors.phoneNumber?.message}</p>
+            {/* <p className='err'>{errors.phoneNumber?.message}</p> */}
+            {errors.phone_number && toast.error(errors.phone_number?.message)}
           </div>
           <div className="input-group">
             <label htmlFor="password">Password</label>
@@ -88,7 +108,8 @@ function SignUp() {
               placeholder="Enter Password"
               {...register("password")}
             />
-            <p className='err'>{errors.password?.message}</p>
+            {/* <p className='err'>{errors.password?.message}</p> */}
+            {errors.password && toast.error(errors.password?.message)}
           </div>
           <div className="input-group">
             <label htmlFor="confirmPassword">Confirm Password</label>
@@ -99,7 +120,8 @@ function SignUp() {
               placeholder="Confirm Password"
               {...register("confirmPassword")}
             />
-            <p className='err'>{errors.confirmPassword?.message}</p>
+            {/* <p className='err'>{errors.confirmPassword?.message}</p> */}
+            {errors.confirmPassword && toast.error(errors.confirmPassword?.message)}
           </div>
           <button className="sign"> <span>Sign up</span> </button>
         </form>

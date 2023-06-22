@@ -1,4 +1,4 @@
-import About from '../About/About'
+
 import './Testimonial.css'
 import user from '../../assets/images/user-1.jpg'
 import FaQ from '../FAQ/FAQ';
@@ -8,59 +8,59 @@ function Testimonial() {
       id: 1,
       name: 'John Doe',
       message: 'MentorPro helped me find an amazing mentor who guided me throughout my career transition. I\'m forever grateful for this platform!',
-      profilePicture: {user},
+      profilePicture: user,
     },
     {
       id: 2,
       name: 'Jane Smith',
       message: 'Thanks to MentorPro, I connected with a mentor who provided invaluable insights and support in navigating the tech industry.',
-      profilePicture: 'path_to_profile_picture_2.jpg',
+      profilePicture: user,
     },
     {
       id: 3,
       name: 'Alex Johnson',
       message: 'I joined MentorPro as a mentor, and it has been an incredibly rewarding experience. Helping mentees achieve their goals is truly fulfilling.',
-      profilePicture: 'path_to_profile_picture_3.jpg',
+      profilePicture: user,
     },
     {
       id: 4,
       name: 'Emily Davis',
       message: 'As a mentee, MentorPro gave me the confidence to pursue my passion. My mentor\'s guidance has been instrumental in my personal growth.',
-      profilePicture: 'path_to_profile_picture_4.jpg',
+      profilePicture: user,
     },
     {
       id: 5,
       name: 'Emily Davis',
       message: 'As a mentee, MentorPro gave me the confidence to pursue my passion. My mentor\'s guidance has been instrumental in my personal growth.',
-      profilePicture: 'path_to_profile_picture_4.jpg',
+      profilePicture: user,
     },
     {
       id: 6,
       name: 'Emily Davis',
       message: 'As a mentee, MentorPro gave me the confidence to pursue my passion. My mentor\'s guidance has been instrumental in my personal growth.',
-      profilePicture: 'path_to_profile_picture_4.jpg',
+      profilePicture: user,
     },
     {
       id: 7,
       name: 'Emily Davis',
       message: 'As a mentee, MentorPro gave me the confidence to pursue my passion. My mentor\'s guidance has been instrumental in my personal growth.',
-      profilePicture: '../../assets/images/user-2.jpg',
+      profilePicture: user,
     },
     {
       id: 8,
       name: 'Emily Davis',
       message: 'As a mentee, MentorPro gave me the confidence to pursue my passion. My mentor\'s guidance has been instrumental in my personal growth.',
-      profilePicture: '../../assets/images/user-1.jpg',
+      profilePicture: user,
     },
   ];
   
 
   return (
     <>
-      <About />
+    
 
       <div className="testimonials-container">
-      <h1 className="title">Success stories</h1>
+      <h1 className="title-1">Success stories</h1>
       <div className="testimonials">
        
         {testimonialsData.map((testimonial) => (
