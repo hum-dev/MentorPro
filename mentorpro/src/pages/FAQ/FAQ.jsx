@@ -27,8 +27,10 @@ function FaQ() {
   };
   return (
     <>
+    <div className="faq-section">
+    <h2 className='title'>Frequently Asked Questions</h2>
      <div className="faqs-container">
-      <h2>Frequently Asked Questions</h2>
+      
       <div className="faqs-list">
         {faqsData.map((faq, index) => (
           <div key={index} className={`faq ${activeIndex === index ? 'active' : ''}`}>
@@ -40,6 +42,7 @@ function FaQ() {
           </div>
         ))}
       </div>
+    </div>
     </div>
     <Contact />
     </>

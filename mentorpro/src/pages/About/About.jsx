@@ -12,8 +12,8 @@ function About() {
       <NavBar />
       <Home />
       {/* <Hero /> */}
-
-      <h1 className="title">About</h1>
+<div className="about-container">
+      <h2 className="title">About</h2>
       <div className="about">
         <article className="card">
           <div className="temporary_img"><img src={pic} alt="" /></div>
@@ -76,6 +76,7 @@ function About() {
             </p>
           </div>
         </article>
+      </div>
       </div>
       </>
     );
