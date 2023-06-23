@@ -7,7 +7,7 @@ const genderOptions = [
   { label: 'Other', value: 'other' }
 ];
 
-const MentorData= () => {
+const Mentor= () => {
 
   
   const handleSubmit = (e) => {
@@ -93,4 +93,4 @@ const MentorData= () => {
   );
 };
 
-export default MentorData;
+export default Mentor;

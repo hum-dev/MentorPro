@@ -11,6 +11,8 @@ import About from './pages/About/About'
 import FaQ from './pages/FAQ/FAQ'
 import Contact from './pages/ContactUs/Contact'
 import NotFound from './pages/NotFound/NotFound'
+import Mentor from './components/Mentor/MentorsData'
+import Mentee from './components/Mentee/MenteeData'
 
 
 
@@ -33,6 +35,8 @@ function App() {
           <Route path="/About" element={<About/>} />
           <Route path="/Testimonial" element={<Testimonial/>} />
           <Route path="/FaQ" element={<FaQ/>} />
+          <Route path="/Mentor" element={<Mentor/>} />
+          <Route path="/Mentee" element={<Mentee/>} />
           <Route path="/Contact" element={<Contact/>} />
           <Route path="*" element={<NotFound/>} />
 

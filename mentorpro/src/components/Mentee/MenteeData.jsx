@@ -7,7 +7,7 @@ const genderOptions = [
   { label: 'Other', value: 'other' }
 ];
 
-const MenteeData= () => {
+const Mentee= () => {
 
   
   const handleSubmit = (e) => {
@@ -104,4 +104,4 @@ const MenteeData= () => {
   );
 };
 
-export default MenteeData;
+export default Mentee;

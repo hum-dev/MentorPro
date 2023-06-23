@@ -3,7 +3,7 @@
     border-top: 1px solid #1bf8e5 ;
     padding: .9rem 0 0;
     /* position: absolute; */
-    /* bottom: 0; */
+    bottom: 0;
     width: 100%;
     /* text-align: center; */
     color: var(--color-blue-dark);
