@@ -1,7 +1,7 @@
 import './About.css'
 import pic from '../../assets/images/About.jpg'
 import Testimonial from '../Testimonials/Testimonial';
-
+// import Admin from '../Admin/Admin';
 // import Hero from '../Home/Hero';
 
 
@@ -12,7 +12,7 @@ function About() {
     return (
       <>
         {/* <Hero /> */}
-        
+        {/* <Admin/> */}
         <div className="about-container">
           <h2 className="title-1">About</h2>
           <div className="about">

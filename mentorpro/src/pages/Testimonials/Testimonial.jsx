@@ -1,6 +1,6 @@
 
 import './Testimonial.css'
-import user from '../../assets/images/user-1.jpg'
+import user from '../../assets/images/Aries.jpg'
 import FaQ from '../FAQ/FAQ';
 function Testimonial() {
   const testimonialsData = [

@@ -1,0 +1,48 @@
+.sidenav {
+    width: 15%;
+    display: flex;
+    flex-direction: column;
+    height: 85vh;
+    border-right: 1px solid #e6e6e6;
+}
+
+.sidenav__wrapper {
+    padding: 0.5rem 0.5rem;
+    border-bottom: 1px solid #e6e6e6;
+}
+
+
+
+.sidenav__wrapper__profile {
+    display: flex;
+    align-items: center;
+   justify-content: center;
+   gap: 1rem;
+   font-size: 2rem;
+    font-weight: 600;
+    color: #000;
+    margin-bottom: 1rem;
+}
+
+.sidenav__wrapper__profile:hover {
+    color: #13e4f3;
+}
+
+.sidenav__wrapper__item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: #000;
+    margin-bottom: 1rem;
+    padding: 0.5rem 0.5rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+.sidenav__wrapper__item:hover {
+    color: #13e4f3;
+    
+}

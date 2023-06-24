@@ -2,7 +2,9 @@ import './Login.css'
 import { useForm} from 'react-hook-form'
 import { yupResolver } from '@hookform/resolvers/yup'
 import * as yup from 'yup'
-// import Axios from 'axios'
+import Axios from 'axios'
+import { useContext } from 'react'
+import { Context } from '../../Context/userContext/Context'
 
 import {Link, useNavigate} from 'react-router-dom'
 import { toast } from 'react-toastify';
@@ -10,6 +12,8 @@ import "react-toastify/dist/ReactToastify.css";
 
 
 function Login() {
+  const {user, dispatch} = useContext(Context)
+  console.log(user)
   const navigate = useNavigate()
 
     const Schema = yup.object().shape({
@@ -30,33 +34,33 @@ function Login() {
     });
 
     const SendDataToServer = async (data) => {
-      // Axios.post("http://localhost:8081/auth/login", data)
-      // .then(({data}) => {
-      //   if(data.token) {
-         
-      //     navigate('/Home')
+      Axios.post("http://localhost:8081/auth/login", data)
+      .then(({data}) => {
+        if(data.token) {
+          dispatch({type: "LOGIN_SUCCESS", payload: data})
+          navigate('/Home')
 
-      //   }
-      // })
-      // .catch(({response}) => {
-      //   const error = response.data.message;
-      //   toast.error(error);
-      // });
-      // toast.success("Logged in successfully");
-      const response = await fetch("http://localhost:8081/auth/login", {
-        method: "POST",
-        body: JSON.stringify(data),
-        headers: {
-          "Content-Type": "application/json",
         }
       })
-      console.log(response.status)
-      if(response.status === 200) {
-        toast.success("Logged in successfully");
-        navigate('/Home')
-      } else {
-        toast.error("Invalid username or password");
-      }
+      .catch(({response}) => {
+        const error = response.data.message;
+        toast.error(error);
+      });
+      toast.success("Logged in successfully");
+      // const response = await fetch("http://localhost:8081/auth/login", {
+      //   method: "POST",
+      //   body: JSON.stringify(data),
+      //   headers: {
+      //     "Content-Type": "application/json",
+      //   }
+      // })
+      // console.log(response.status)
+      // if(response.status === 200) {
+      //   toast.success("Logged in successfully");
+      //   navigate('/Home')
+      // } else {
+      //   toast.error("Invalid username or password");
+      // }
     };
     
 

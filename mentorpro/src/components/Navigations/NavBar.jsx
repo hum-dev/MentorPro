@@ -5,8 +5,18 @@ import {LuHelpingHand} from 'react-icons/lu'
 import {GrResources} from 'react-icons/gr'
 import { Link } from 'react-router-dom';
 import prof from '../../assets/images/portrait.png'
+import { useContext } from "react";
+import { Context } from "../Context/userContext/Context";
+
 import './NavBar.css'
 function NavBar() {
+    
+    const { dispatch} = useContext(Context)
+ const handleLogout = () => {
+   dispatch({type: "LOGOUT"})
+   
+ };
+
   return (
     <header className="landing-nav">
    <img src={logo} alt="" className="logo" />
@@ -16,13 +26,13 @@ function NavBar() {
             <li className="landing-nav-header-list--item"><Link to='/About'><FcAbout  className='icon'/> About</Link></li>
             <li className="landing-nav-header-list--item"><Link to='/Mentor'> <LuHelpingHand  className='icon'/> Mentors</Link></li> 
             <li className="landing-nav-header-list--item"><Link to='/Mentee'> < LuHelpingHand  className='icon'/> Mentees</Link></li>
-            <li className="landing-nav-header-list--item"><Link to='/Resources'><GrResources className='icon'/> Resources</Link></li>
+            <li className="landing-nav-header-list--item"><Link to='/Profile'><GrResources className='icon'/> Profile</Link></li>
             <li className="landing-nav-header-list--item"><Link to='/Contact'> <FcBusinessContact  className='icon'/> Contact</Link></li>
             <li className="landing-nav-btn">
                 <div className='landin-nav-header-left'>
                   
-                    <a href="" className="profile"> <img src={prof} alt="" /> </a>
-                    <a href="" className="landing-nav-btn-hero landing-nav-btn-pri"> <FaSignOutAlt  className='icon' /> sign out </a>
+                    <Link to='/Profile'className="profile" > <img  src={prof} alt="" /> </Link>
+                    <Link to='/' onClick={handleLogout} className="landing-nav-btn-hero landing-nav-btn-pri"> <FaSignOutAlt  className='icon' /> sign out </Link>
                    
                 </div>
             </li>
