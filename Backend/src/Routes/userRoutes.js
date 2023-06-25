@@ -11,8 +11,8 @@ const userRoutes = (app) => {
     .delete(loginRequired , deleteUser);
 
 
-    app.route("/register")
-    .post(register);
+    // // app.route("/register")
+    // .post(register);
 
     //auth routes
     app.route("/auth/register")
