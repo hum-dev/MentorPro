@@ -1,9 +1,9 @@
 import './Contact.css'
-import { useState } from 'react';
-import { useForm } from 'react-hook-form';
+// import { useState } from 'react';
+import {  useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
-import Axios from 'axios'
+// import Axios from 'axios'
 import { toast } from 'react-toastify';
 import "react-toastify/dist/ReactToastify.css";
 
@@ -24,19 +24,19 @@ function Contact() {
   
 
 
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    phonenumber: '',
-    subject: '',
-    message: '',
-  });
+  // const [formData, setFormData] = useState({
+  //   name: '',
+  //   email: '',
+  //   phonenumber: '',
+  //   subject: '',
+  //   message: '',
+  // });
 
-  const handleChange = (e) => {
-    e.preventDefault();
-    const { name, value } = e.target;
-    setFormData((prevData) => ({ ...prevData, [name]: value }));
-  };
+  // const handleChange = (e) => {
+  //   e.preventDefault();
+  //   const { name, value } = e.target;
+  //   setFormData((prevData) => ({ ...prevData, [name]: value }));
+  // };
 
   const {
     register,
@@ -47,16 +47,29 @@ function Contact() {
   });
 
   const sendDataToServer = async(data) => {
-  await  Axios.post("http://localhost:8081/message" , data)
-    .then((response) => { 
-      response.data.message && toast.message(response.data.message);
-     
+    const response = await fetch("http://localhost:8081/message", {
+      method: "POST",
+      body: JSON.stringify(data),
+      headers: {
+        "Content-Type": "application/json",
+      }
     })
-    .catch(({response}) => { 
-      const error = response.data.message;
-      toast.error(error);
+    if (response.status === 201) {
+      toast.success("Message sent successfully");
+      setTimeout(() => {
+        window.location.reload();
+      }, 2000)
+    }
+  // await  Axios.post("http://localhost:8081/message" , data)
+  //   .then((response) => { 
+  //     response.data.message && toast.message(response.data.message);
      
-    });
+  //   })
+  //   .catch(({response}) => { 
+  //     const error = response.data.message;
+  //     toast.error(error);
+     
+  //   });
   };
     return (
       <>
@@ -70,8 +83,8 @@ function Contact() {
                 id='name'
                 name="name"
                 placeholder="Your Name"
-                value={formData.name}
-                onChange={handleChange}
+                // value={formData.name}
+                // onChange={handleChange}
                 {...register("name")}
               />
               {
@@ -82,8 +95,8 @@ function Contact() {
                 id='email'
                 name="email"
                 placeholder="Your Email"
-                value={formData.email}
-                onChange={handleChange}
+                // value={formData.email}
+                // onChange={handleChange}
                 {...register("email")}
               />
               {
@@ -94,8 +107,8 @@ function Contact() {
                 id='phone'
                 name="phonenumber"
                 placeholder="Your Phone"
-                value={formData.phone}
-                onChange={handleChange}
+                // value={formData.phone}
+                // onChange={handleChange}
                 {...register("phonenumber")}
               />
               {
@@ -106,8 +119,8 @@ function Contact() {
                 id='subject'
                 name="subject"
                 placeholder="Subject"
-                value={formData.subject}
-                onChange={handleChange}
+                // value={formData.subject}
+                // onChange={handleChange}
                 {...register("subject")}
               />
               {
@@ -117,8 +130,8 @@ function Contact() {
                 name="message"
                 id='message'
                 placeholder="Message"
-                value={formData.message}
-                onChange={handleChange}
+                // value={formData.message}
+                // onChange={handleChange}
                 {...register("message")}
               ></textarea>
               {
