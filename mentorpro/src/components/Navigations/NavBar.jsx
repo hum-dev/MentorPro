@@ -22,12 +22,12 @@ function NavBar() {
    <img src={logo} alt="" className="logo" />
     <nav className="landing-nav-header">
         <ul className="landing-nav-header-list">
-            <li className="landing-nav-header-list--item"> <Link to='/Home'> <FaHome className='icon' />Home</Link></li>
-            <li className="landing-nav-header-list--item"><Link to='/About'><FcAbout  className='icon'/> About</Link></li>
-            <li className="landing-nav-header-list--item"><Link to='/Mentor'> <LuHelpingHand  className='icon'/> Mentors</Link></li> 
-            <li className="landing-nav-header-list--item"><Link to='/Mentee'> < LuHelpingHand  className='icon'/> Mentees</Link></li>
-            <li className="landing-nav-header-list--item"><Link to='/Profile'><GrResources className='icon'/> Profile</Link></li>
-            <li className="landing-nav-header-list--item"><Link to='/Contact'> <FcBusinessContact  className='icon'/> Contact</Link></li>
+            <li className="landing-nav-header-list--item active"> <Link to='/Home'> <FaHome className='icon' />Home</Link></li>
+            <li className="landing-nav-header-list--item active"><Link to='/About'><FcAbout  className='icon'/> About</Link></li>
+            <li className="landing-nav-header-list--item active "><Link to='/Mentor'> <LuHelpingHand  className='icon'/> Mentors</Link></li> 
+            <li className="landing-nav-header-list--item active"><Link to='/Mentee'> < LuHelpingHand  className='icon'/> Mentees</Link></li>
+            <li className="landing-nav-header-list--item active"><Link to='/Profile'><GrResources className='icon'/> Profile</Link></li>
+            <li className="landing-nav-header-list--item active"><Link to='/Contact'> <FcBusinessContact  className='icon'/> Contact</Link></li>
             <li className="landing-nav-btn">
                 <div className='landin-nav-header-left'>
                   

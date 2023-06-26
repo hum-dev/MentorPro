@@ -49,6 +49,10 @@
     border-bottom: 3px solid var(--color-white);
 }
 
+.landing-nav-header-list--item a .active{
+    color: var(--color-secondary);
+}
+
 .landing-nav-btn div{
     display: flex;
     gap: 1rem;
