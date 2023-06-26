@@ -4,6 +4,7 @@ import config from "./src/db/config.js";
 import userRoutes from "./src/Routes/userRoutes.js";
 import mentorRoutes from "./src/Routes/mentorRoutes.js";
 import menteeRoutes from "./src/Routes/menteesRoutes.js";
+import messageRoutes from "./src/Routes/messageRoutes.js";
 import jwt from 'jsonwebtoken'
 import cors from 'cors'
 
@@ -32,6 +33,7 @@ app.use((req, res, next) => {
 userRoutes(app);
 mentorRoutes(app);
 menteeRoutes(app);
+messageRoutes(app);
 
 
 app.get("/", (req, res) => {
