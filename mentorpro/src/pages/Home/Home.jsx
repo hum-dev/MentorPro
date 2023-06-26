@@ -1,6 +1,6 @@
 import './Home.css'
 import pic from '../../assets/images/ment-1.jpg'
-import NavBar from '../../components/Navigations/NavBar'
+// import NavBar from '../../components/Navigations/NavBar'
 import About from '../About/About'
 // import { Link } from "react-router-dom"
 
@@ -13,7 +13,7 @@ function Home() {
   // const navigate = useNavigate()
   return (
     <div >
-  <NavBar/>
+  {/* <NavBar/> */}
     <section className="landing-page">
     <div className="landing-page-left">
         <h2 className="landing-page-left--heading">

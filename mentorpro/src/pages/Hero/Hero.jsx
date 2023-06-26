@@ -1,7 +1,7 @@
 import './Hero.css'
 import pic from '../../assets/images/ment-1.jpg'
 import { Link } from "react-router-dom"
-import NavHero from '../../components/Landingpage/LandingNav/NavHero'
+// import NavHero from '../../components/Landingpage/LandingNav/NavHero'
 import SignUpBtn from '../../components/Buttons/SignUpBtn'
 
 
@@ -11,7 +11,7 @@ function Hero() {
   // const navigate = useNavigate()
   return (
     <div >
-  <NavHero />
+  {/* <NavHero /> */}
     <section className="landing-page">
     <div className="landing-page-left">
         <h2 className="landing-page-left--heading">

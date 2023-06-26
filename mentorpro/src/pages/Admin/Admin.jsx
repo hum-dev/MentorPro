@@ -1,9 +1,12 @@
 import  { useEffect, useState } from 'react';
 import axios from 'axios';
 import './Admin.css';
+import {Menu, MenuItem, Sidebar, SubMenu} from 'react-pro-sidebar';
+import { FaBars } from 'react-icons/fa';
 
 function Admin() {
     const [users, setUsers] = useState([]);
+    const [collapsed, setCollapsed] = useState(false);
     useEffect(() => {
         // Fetch user data from the server
         const fetchUsers = async () => {
@@ -29,7 +32,32 @@ function Admin() {
     
       return (
         <div className="admin-container">
-          <h2>Admin Dashboard</h2>
+          <Sidebar className="sidebar" collapsed = {collapsed}> 
+          <Menu>
+            <MenuItem icon = {<FaBars/>} onClick= {() => {
+              setCollapsed(!collapsed);
+            }}>
+
+            Dashboard
+            </MenuItem>
+            <SubMenu title="Users">
+              <MenuItem>  
+              view Users
+              </MenuItem>
+              <MenuItem>Delete Users</MenuItem>
+            </SubMenu>
+            <SubMenu title="Mentors">
+              <MenuItem>View Mentors</MenuItem>
+              <MenuItem>Delete Mentors</MenuItem>
+              <MenuItem>Appointments</MenuItem>
+            </SubMenu>
+            <SubMenu title="Mentees">
+              <MenuItem>View Mentees</MenuItem>
+              <MenuItem>Delete Mentees</MenuItem>
+              <MenuItem>Appointments</MenuItem>
+            </SubMenu>
+          </Menu>
+          </Sidebar>
           <table className="user-table">
             <thead>
               <tr>

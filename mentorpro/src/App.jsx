@@ -2,6 +2,7 @@ import './App.css'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import { useContext } from 'react'
 import { Context } from './components/Context/userContext/Context'
+import NavHero from './components/Landingpage/LandingNav/NavHero'
 import Hero from './pages/Hero/Hero'
 import Login from './components/Account/Login/Login'
 import SignUp from './components/Account/SignUp/SignUp'
@@ -15,6 +16,8 @@ import NotFound from './pages/NotFound/NotFound'
 import Mentor from './components/Mentor/MentorsData'
 import Mentee from './components/Mentee/MenteeData'
 import Profile from './pages/Profile/Profile'
+import NavBar from './components/Navigations/NavBar'
+import Admin from './pages/Admin/Admin'
 
 
 
@@ -27,6 +30,10 @@ function App() {
   return (
     <BrowserRouter>
       <>
+      {
+        user ? <NavBar/> : <NavHero/>
+      }
+      
       
         <Routes>
           <Route path="/" element={<Hero />} />
@@ -42,6 +49,7 @@ function App() {
           <Route path="/Mentee" element={<Mentee/>} />
           <Route path="/Contact" element={<Contact/>} />
           <Route path="/Profile" element={<Profile/>} />
+          <Route path="/Admin" element={<Admin/>} />
           <Route path="*" element={<NotFound/>} />
 
 
