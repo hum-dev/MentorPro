@@ -120,3 +120,34 @@
 .landing-nav-btn-sec:hover{
     color: var(--color-secondary);
 }
+
+/* Media Queries */
+@media screen and (max-width: 480px) {
+    .landing-nav-header-list {
+      display: none;
+    }
+    
+    .landing-nav-btn div {
+      margin-left: 1rem;
+    }
+    
+    .landing-nav-btn-pri,
+    .landing-nav-btn-sec {
+      margin: 0.5rem;
+    }
+  }
+@media screen and (max-width: 768px) {
+    .landing-nav-header-list {
+      display: none;
+    }
+  
+    .landing-nav-btn div {
+      margin-left: 1rem;
+    }
+  }
+  
+  @media screen and (min-width: 1200px) {
+    .landing-nav-header-list {
+      margin-left: 8rem;
+    }
+  }

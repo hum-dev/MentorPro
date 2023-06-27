@@ -1,6 +1,7 @@
 import './Main.css'
 import { useContext } from 'react'
 import { Context } from '../../Context/ProfileContext/ProfileContext'
+import Profile from '../Profile/Profile'
 
 function Main() {
   const {ui} = useContext(Context)
@@ -13,7 +14,7 @@ function Main() {
       ui === 'profile' ? (
         <div className="mainnav__wrapper">
         <h2>User Profile</h2>
-
+           <Profile />
       </div>
      
       ) : ui === 'update' ? (

@@ -3,7 +3,7 @@ import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
 import { Link, useNavigate } from 'react-router-dom';
-import Axios from 'axios';
+// import Axios from 'axios';
 import { toast } from 'react-toastify';
 import "react-toastify/dist/ReactToastify.css";
 
@@ -39,18 +39,32 @@ function SignUp() {
     resolver: yupResolver(Schema),
   });
 
-  const SendDataToServer = (data) => {
-
-    Axios.post("http://localhost:8081/auth/register" , data)
-    .then((response) => { 
-      response.data.message && toast.message(response.data.message);
-      navigate('/Login')
+  const SendDataToServer = async (data) => {
+    const response = await fetch("http://localhost:8081/auth/register", {
+      method: "POST",
+      body: JSON.stringify(data),
+      headers: {
+        "Content-Type": "application/json",
+      }
     })
-    .catch(({response}) => { 
-      const error = response.data.message;
-      toast.error(error);
+    if (response.status === 200) {
+      toast.success("Account created successfully");
+      navigate('/Login')
+    } else {
+      toast.error("Account creation failed");
+    }
+
+
+    //  Axios.post("http://localhost:8081/auth/register" , data)
+    // .then((response) => { 
+    //   response.data.message && toast.message(response.data.message);
+    //   navigate('/Login')
+    // })
+    // .catch(({response}) => { 
+    //   const error = response.data.message;
+    //   toast.error(error);
      
-    });
+    // });
  
     
 
@@ -90,7 +104,7 @@ function SignUp() {
             <input
         
               type="text"
-              name="phoneNumber"
+              name="phone_number"
               id="phoneNumber"
               placeholder="Enter Phone Number"
               {...register("phone_number")}

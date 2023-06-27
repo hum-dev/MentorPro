@@ -197,3 +197,50 @@
   .card4:hover .linkedin {
     fill: white;
   }
+  
+/* Media Queries */
+@media screen and (max-width: 768px) {
+  .footer {
+    
+    align-items: center;
+    padding-bottom: 1rem;
+  }
+
+  .footer-left,
+  .footer-right {
+    margin-bottom: 1rem;
+  }
+  .footer-left--heading{
+    margin-left: 1rem;
+    font-size: 1rem;
+  }
+
+  .footer__text {
+    font-size: 1rem;
+
+  }
+
+  .footer-right--heading {
+    margin-left: 1rem;
+    font-size: 1rem;
+  }
+
+  .footer__link {
+    margin-right: 0;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .footer {
+    justify-content: space-around;
+  }
+
+  .footer-left,
+  .footer-right {
+    gap: 2rem;
+  }
+
+  .footer-right--heading {
+    margin-left: 2rem;
+  }
+}
