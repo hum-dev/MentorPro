@@ -13,14 +13,13 @@ function Profile() {
             <img src={pic} alt="" />
         </div>
         <div className="user__Details">
-            <h2>UserId</h2>
-            <p>{user.id}</p>
+           
             <h2>Username</h2>
             <p>{user.username}</p>
             <h2>Email</h2>
             <p>{user.email}</p>
             <h2>Phone</h2>
-            <p>{user.phone_number}</p>
+            <p>{user.phone}</p>
 
          </div>   
     

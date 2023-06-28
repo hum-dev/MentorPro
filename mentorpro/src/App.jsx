@@ -18,6 +18,7 @@ import Mentee from './components/Mentee/MenteeData'
 import Profile from './pages/Profile/Profile'
 import NavBar from './components/Navigations/NavBar'
 import Admin from './pages/Admin/Admin'
+import ViewUser from './pages/Admin/ViewUser'
 
 
 
@@ -49,7 +50,11 @@ function App() {
           <Route path="/Mentee" element={<Mentee/>} />
           <Route path="/Contact" element={<Contact/>} />
           <Route path="/Profile" element={<Profile/>} />
-          <Route path="/Admin" element={<Admin/>} />
+          <Route path="/Admin" element={<Admin/>} >
+          <Route path="viewuser" element={<ViewUser/>} />
+          </Route>
+          
+          
           <Route path="*" element={<NotFound/>} />
 
 

@@ -7,13 +7,13 @@
 .user__Avatar {
    display: flex;
     justify-content: center;
-    width: 50%;
+    width: 70%;
     height: 100%;
    }
 
    .user__Avatar img {
-    width: 50%;
-    height: 100%;
+    width: 70%;
+    height: 70%;
     object-fit: cover;
     border: 1px solid #ddd;
     border-radius: 50%;
@@ -28,4 +28,5 @@
     align-items: center;
     border-left: 1px dotted #ddd;
     padding: 20px;
+   margin-left: 20rem;
 }

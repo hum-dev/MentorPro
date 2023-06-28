@@ -2,7 +2,7 @@ import logo from '../../assets/images/M logo.png'
 import {FaHome, FaSignOutAlt} from 'react-icons/fa'
 import {FcAbout, FcBusinessContact} from 'react-icons/fc'
 import {LuHelpingHand} from 'react-icons/lu'
-import {GrResources} from 'react-icons/gr'
+// import {GrResources} from 'react-icons/gr'
 import { Link } from 'react-router-dom';
 import prof from '../../assets/images/portrait.png'
 import { useContext } from "react";
@@ -26,7 +26,7 @@ function NavBar() {
             <li className="landing-nav-header-list--item active"><Link to='/About'><FcAbout  className='icon'/> About</Link></li>
             <li className="landing-nav-header-list--item active "><Link to='/Mentor'> <LuHelpingHand  className='icon'/> Mentors</Link></li> 
             <li className="landing-nav-header-list--item active"><Link to='/Mentee'> < LuHelpingHand  className='icon'/> Mentees</Link></li>
-            <li className="landing-nav-header-list--item active"><Link to='/Profile'><GrResources className='icon'/> Profile</Link></li>
+            {/* <li className="landing-nav-header-list--item active"><Link to='/Profile'><GrResources className='icon'/> Profile</Link></li> */}
             <li className="landing-nav-header-list--item active"><Link to='/Contact'> <FcBusinessContact  className='icon'/> Contact</Link></li>
             <li className="landing-nav-header-list--item active"><Link to='/Admin'>  Admin</Link></li>
             <li className="landing-nav-btn">
