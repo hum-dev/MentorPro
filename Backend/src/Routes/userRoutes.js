@@ -2,7 +2,7 @@ import {getUsers,getUser, updateUser,deleteUser, register, login, loginRequired 
 
 const userRoutes = (app) => {
     app.route("/users")
-    .get(loginRequired, getUsers);
+    .get( getUsers);
 
     
     app.route("/user/:user_id")

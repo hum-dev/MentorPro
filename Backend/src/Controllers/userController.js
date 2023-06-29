@@ -5,6 +5,7 @@ import jwt from 'jsonwebtoken';
 
 export const loginRequired = (req, res, next) => {
   if (req.user) {
+    console.log(req.user);
       next();
   } else {    
       return res.status(401).json({ message: 'Unauthorized user!' });
@@ -156,8 +157,8 @@ export const login = async (req, res) => {
             if (!isPasswordCorrect) {
                 res.status(401).json({ message: ' Authetication failed Wrong Credentials!' });
             } else {
-                const token = `JWT ${jwt.sign({ username: user.username, email: user.email }, config.jwt_secret, { expiresIn: '1h' })}`;
-                res.status(200).json({ email: user.email,username: user.username,id: user.id , token: token });
+                const token = `JWT ${jwt.sign({ username: user.username, email: user.email,phone: user.phone_number }, config.jwt_secret, { expiresIn: '1h' })}`;
+                res.status(200).json({ email: user.email,username: user.username,id: user.user_id ,phone: user.phone_number, token: token });
             }
         }
     } catch (error) {
