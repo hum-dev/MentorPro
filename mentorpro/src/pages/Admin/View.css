@@ -27,20 +27,31 @@
    */
 
    .table__wrapper{
-    border: 3px solid red;
-    --size: 95rem;
-    width: var(--size);
-    max-width: var(--size);
+    
+    width: 82%;
+    /* max-width: calc(100vw - 300px); */
+
    }
 
 
    .user-table {
-    --width-fix: 100%;
-    width: var(--width-fix)!important;
-    max-width:var(--width-fix)!important;
+    margin-left: 2rem;
+    width: 100%;
+    overflow-x: scroll;
     border-collapse: collapse;
     table-layout: auto;
+    /* border: 2px solid yellow; */
   }
+  .user-table::-webkit-scrollbar{
+    background-color: #03787caa;
+    height: 4px;
+  }
+  .user-table::-webkit-scrollbar-thumb{
+    width: 5px;
+    border-radius: 100px;
+    background-color: #e0eff0;
+  }
+
   
   .user-table th,
   .user-table td {
@@ -50,12 +61,21 @@
       text-overflow: ellipsis;
     padding: 5px 0;
     text-align: left;
+   
+    color:  var( --color-blue-dark);
+    border-right: 1px solid #ddd;
     border-bottom: 1px solid #ddd;
   }
+  /* .row{
+    width: 10px;
+    border: 5px solid blue;
+    background-color: aqua;
+  } */
 
   .user-table td{
-    max-width: 10%!important;
+    
     text-overflow: hidden;
+   
     
   }
 
@@ -68,13 +88,13 @@
     background-color: #f2f2f2;
   }
   
-  .user-table tbody tr:nth-child(even) {
+  /* .user-table tbody tr:nth-child(even) {
     background-color: #f9f9f9;
-  }
+  } */
   
   .delete-button {
-    background-color: #ff0000;
-    color: #fff;
+    
+    color: #ff0000;
     border: none;
     padding: 6px 12px;
     cursor: pointer;

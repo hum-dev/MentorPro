@@ -4,7 +4,7 @@ import {FcAbout, FcBusinessContact} from 'react-icons/fc'
 import {LuHelpingHand} from 'react-icons/lu'
 // import {GrResources} from 'react-icons/gr'
 import { Link } from 'react-router-dom';
-import prof from '../../assets/images/portrait.png'
+import prof from '../../assets/images/OIP.jpeg'
 import { useContext } from "react";
 import { Context } from "../Context/userContext/Context";
 

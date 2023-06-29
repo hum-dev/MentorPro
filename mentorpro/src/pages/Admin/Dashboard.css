@@ -1,5 +1,5 @@
 .admin-container {
-  width: 100%;
+    width: 300px;
     margin: 0 ;
     padding: 20px;
     background-color: var(--color-primary);

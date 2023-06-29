@@ -1,5 +1,5 @@
 import './Profile.css'
-import pic from '../../../assets/images/portrait.png'
+import pic from '../../../assets/images/OIP.jpeg'
 import { useContext } from 'react'
 import { Context } from '../../Context/userContext/Context'
 

@@ -1,4 +1,6 @@
 import  { useEffect, useState } from 'react';
+import { toast } from 'react-toastify';
+import "react-toastify/dist/ReactToastify.css";
 // import { set } from 'react-hook-form';
 // import axios from 'axios';
 import './View.css'
@@ -28,28 +30,37 @@ console.log(allMentors);
         fetchMentors();
       }, []);
     
-      useEffect(() => {
-        const handleEdit = async () => {
-            const response = await fetch('http://localhost:8081/users',{
-                method: 'PUT',
-                headers: {
-                    'Content-Type': 'application/json',
-                    'Accept': 'application/json'
-                }
-            });
-
-            const editUser = await response.json();
-            setMentors(editUser.recordset);
-            console
+const handleDelete = async (mentor_id) => {
+    try {
+        const response = await fetch(`http://localhost:8081/mentor/${mentor_id}`,{
+            method: 'DELETE',
+            headers: {
+                'Content-Type': 'application/json',
+            }
+        });
+        const deleteMentor = await response.json();
+        setMentors(deleteMentor);
+        if (response.status === 200){
+          toast.success("Mentor deleted successfully");
+            
+            setTimeout(() => {
+                window.location.reload();
+            }, 2000)
         }
+        
+    } catch (error) {
+        console.error('Error deleting mentor:', error);
+    }
 
-        handleEdit();
-        }, []);
+}
+
+      
   return (
     <div className='table__wrapper'>
-       <table className="user-table">
+      <div className="user-table">
+       <table >
             <thead>
-              <tr>
+              <tr className='row'>
                 <th>ID</th>
                 <th>Name</th>
                 <th>Gender</th>
@@ -73,12 +84,13 @@ console.log(allMentors);
                   <td>{mentor.tech_field}</td>
                   <td>{mentor.role}</td>
                   <td>
-                    <button className="delete-button" >Delete</button>
+                    <button className="delete-button" onClick={()=> handleDelete(mentor.mentor_id)} >Delete</button>
                   </td>
                 </tr>
               ))}
             </tbody>
           </table>
+          </div>
     </div>
   )
 }

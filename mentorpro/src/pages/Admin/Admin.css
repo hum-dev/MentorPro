@@ -1,11 +1,13 @@
 .view_user {
     display: flex;
     width:100%;
-   /* align-items: center; */
-    /* justify-content: center; */
+    
+   /* align-items: center;  */
+   
 }
 
 .data{
-    flex: 1;
-   margin-left: 20px;
+    flex: 2;
+   margin-right: 20rem;
+   
 }

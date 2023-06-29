@@ -1,4 +1,6 @@
 import  { useEffect, useState } from 'react';
+import { toast } from 'react-toastify';
+import "react-toastify/dist/ReactToastify.css";
 // import { set } from 'react-hook-form';
 // import axios from 'axios';
 import './View.css'
@@ -28,28 +30,35 @@ console.log(allMentees);
         fetchMentees();
       }, []);
     
-      useEffect(() => {
-        const handleEdit = async () => {
-            const response = await fetch('http://localhost:8081/users',{
-                method: 'PUT',
+      const handleDelete = async (mentee_id) => {
+        try {
+            const response = await fetch(`http://localhost:8081/mentor/${mentee_id}`,{
+                method: 'DELETE',
                 headers: {
                     'Content-Type': 'application/json',
-                    'Accept': 'application/json'
                 }
             });
-
-            const editUser = await response.json();
-            setMentees(editUser.recordset);
-            console
+            const deleteMentee = await response.json();
+            setMentees(deleteMentee);
+            if (response.status === 200){
+              toast.success("Mentee deleted successfully");
+                
+                setTimeout(() => {
+                    window.location.reload();
+                }, 2000)
+            }
+            
+        } catch (error) {
+            console.error('Error deleting mentor:', error);
         }
-
-        handleEdit();
-        }, []);
+    
+    }
   return (
     <div className='table__wrapper' > 
-       <table className="user-table">
+    <div className="user-table">
+       <table >
             <thead>
-              <tr>
+              <tr className='row'>
                 <th>ID</th>
                 <th>Name</th>
                 <th>Gender</th>
@@ -75,12 +84,13 @@ console.log(allMentees);
                   <td>{mentee.expectations}</td>
                   <td>{mentee.role}</td>
                   <td>
-                    <button className="delete-button" >Delete</button>
+                    <button className="delete-button" onClick={()=> handleDelete(mentee.mentee_id)} >Delete</button>
                   </td>
                 </tr>
               ))}
             </tbody>
           </table>
+          </div>
     </div>
   )
 }

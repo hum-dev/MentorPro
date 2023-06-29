@@ -2,6 +2,7 @@ import './Main.css'
 import { useContext } from 'react'
 import { Context } from '../../Context/ProfileContext/ProfileContext'
 import Profile from '../Profile/Profile'
+import Update from '../Profile/update'
 
 function Main() {
   const {ui} = useContext(Context)
@@ -21,6 +22,7 @@ function Main() {
          
       <div className="mainnav__wrapper">
       <h2>update Profile</h2>
+              <Update />
     </div>
       ) : 'profile'
     }
