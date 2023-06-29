@@ -13,27 +13,33 @@ function Dashboard() {
       return (
         <div className="admin-container">
           <Sidebar className="sidebar" collapsed = {collapsed}> 
-          <Menu>
+          <Menu className='menu'>
             <MenuItem icon = {<FaBars/>} onClick= {() => {
               setCollapsed(!collapsed);
             }}>
 
             Dashboard
             </MenuItem>
-            <SubMenu title="Users">
-              <Link to='Viewuser'><MenuItem>  
+           
+            <SubMenu label='Users' title="Users">
+              <MenuItem component={<Link to='Viewuser'/>}>  
               view Users
-              </MenuItem></Link>
-              
+              </MenuItem>
              
             </SubMenu>
-            <SubMenu title="Mentors">
-              <MenuItem>View Mentors</MenuItem>
-             
+            
+            <SubMenu label='Mentors' title="Mentors" style={{color: "#0c0c22"}}>
+               
+              <MenuItem component={<Link to='ViewMentors'/>}>View Mentors</MenuItem>
+              
               <MenuItem>Appointments</MenuItem>
             </SubMenu>
-            <SubMenu title="Mentees">
-              <MenuItem>View Mentees</MenuItem>
+            
+            <SubMenu label='Mentees' title="Mentees">
+              
+              <MenuItem component={<Link to='ViewMentees'/>}>View Mentees</MenuItem>
+             
+              
               
               <MenuItem>Appointments</MenuItem>
             </SubMenu>

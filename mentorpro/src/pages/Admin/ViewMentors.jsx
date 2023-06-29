@@ -1,31 +1,31 @@
 import  { useEffect, useState } from 'react';
 // import { set } from 'react-hook-form';
 // import axios from 'axios';
-
 import './View.css'
-function ViewUser() {
-    const [users, setUsers] = useState([]);
+
+function ViewMentors() {
+    const [mentors, setMentors] = useState([]);
    
     useEffect(() => {
         // Fetch user data from the server
-        const fetchUsers = async () => {
+        const fetchMentors = async () => {
           try {
-            const response = await fetch('http://localhost:8081/users',{
+            const response = await fetch('http://localhost:8081/mentors',{
                 method: 'GET',
                 headers: {
                     'Content-Type': 'application/json',
                 }
             });
-const allUsers = await response.json();
-setUsers(allUsers);
-console.log(allUsers);
+const allMentors = await response.json();
+setMentors(allMentors);
+console.log(allMentors);
             
           } catch (error) {
             console.error('Error fetching users:', error);
           }
         };
     
-        fetchUsers();
+        fetchMentors();
       }, []);
     
       useEffect(() => {
@@ -39,7 +39,7 @@ console.log(allUsers);
             });
 
             const editUser = await response.json();
-            setUsers(editUser.recordset);
+            setMentors(editUser.recordset);
             console
         }
 
@@ -52,20 +52,26 @@ console.log(allUsers);
               <tr>
                 <th>ID</th>
                 <th>Name</th>
+                <th>Gender</th>
                 <th>Email</th>
                 <th>Phone</th>
+                <th>Bio</th>
+                <th>TechField</th>
                 <th>Role</th>
                 <th>Action</th>
               </tr>
             </thead>
             <tbody>
-              {users.map( (user, id) => (
+              {mentors.map( (mentor, id) => (
                 <tr key={id}>
-                  <td>{user.user_id}</td>
-                  <td>{user.username}</td>
-                  <td>{user.email}</td>
-                  <td>{user.phone_number}</td>
-                  <td>{user.role}</td>
+                  <td>{mentor.mentor_id}</td>
+                  <td>{mentor.full_name}</td>
+                  <td>{mentor.gender}</td>
+                  <td>{mentor.email}</td>
+                  <td>{mentor.phone_number}</td>
+                  <td>{mentor.bio}</td>
+                  <td>{mentor.tech_field}</td>
+                  <td>{mentor.role}</td>
                   <td>
                     <button className="delete-button" >Delete</button>
                   </td>
@@ -77,4 +83,4 @@ console.log(allUsers);
   )
 }
 
-export default ViewUser
+export default ViewMentors

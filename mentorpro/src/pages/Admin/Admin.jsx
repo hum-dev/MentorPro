@@ -6,7 +6,10 @@ function Admin() {
   return (
     <div className="view_user">
       <Dashboard/>
+      <div className="data">
       <Outlet/>
+      </div>
+      
     </div>
   )
 }
