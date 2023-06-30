@@ -1,5 +1,5 @@
 import  Express  from "express";
-
+import bodyParser from "body-parser";
 import config from "./src/db/config.js";
 import userRoutes from "./src/Routes/userRoutes.js";
 import mentorRoutes from "./src/Routes/mentorRoutes.js";
@@ -14,6 +14,7 @@ const app = Express();
 app.use(cors());
 app.use(Express.json());
 app.use(Express.urlencoded({ extended: true }));
+app.use(bodyParser.json());
 
 app.use((req, res, next) => {
     if (req.headers && req.headers.authorization && req.headers.authorization.split(' ')[0] === 'JWT') {
@@ -42,7 +43,7 @@ app.get("/", (req, res) => {
 
 
 
-app.listen(config.port, () => {
-    console.log(`Server running at ${config.url}`);
+app.listen(config.port || 5000, () => {
+    console.log('Server running ');
 });
 

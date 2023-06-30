@@ -1,29 +1,25 @@
 import dotenv from 'dotenv';
 import assert from 'assert';
 
+// dotenv.config({path:'./.env'});
 dotenv.config();
 
-const { PORT, HOST, HOST_URL, SQL_USER, SQL_PORT, SQL_PASSWORD, SQL_DB, SQL_SERVER,JWT_SECRET } = process.env; 
-
-const sqlEncrypt = process.env.SQL_ENCRYPT === 'true';
+const { PORT , SQL_USER , SQL_PASSWORD, SQL_DB, SQL_SERVER,JWT_SECRET } = process.env; 
 
 assert(PORT, 'PORT is required');
-assert(HOST, 'HOST is required');
 
 const config = {
     port: PORT,
-    host: HOST,
-    url: HOST_URL,
     sql: {
         server: SQL_SERVER,
-        sqlPort: SQL_PORT,
+        
         database: SQL_DB,
         user: SQL_USER,
         password: SQL_PASSWORD,
         options: {
-            encrypt: false,
+            encrypt: true,
             enableArithAbort: true,
-            trustServerCertificate: true,
+            trustServerCertificate: false,
             trustedConnection: true
             
         }
