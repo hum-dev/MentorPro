@@ -7,25 +7,27 @@ import './View.css'
 
 function ViewMentors() {
     const [mentors, setMentors] = useState([]);
-   
-    useEffect(() => {
-        // Fetch user data from the server
-        const fetchMentors = async () => {
-          try {
-            const response = await fetch('http://localhost:8081/mentors',{
-                method: 'GET',
-                headers: {
-                    'Content-Type': 'application/json',
-                }
-            });
+
+    const fetchMentors = async () => {
+      try {
+        const response = await fetch('http://localhost:8081/mentors',{
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json',
+            }
+        });
 const allMentors = await response.json();
 setMentors(allMentors);
 console.log(allMentors);
-            
-          } catch (error) {
-            console.error('Error fetching users:', error);
-          }
-        };
+        
+      } catch (error) {
+        console.error('Error fetching users:', error);
+      }
+    };
+   
+    useEffect(() => {
+        // Fetch user data from the server
+        
     
         fetchMentors();
       }, []);
@@ -43,9 +45,7 @@ const handleDelete = async (mentor_id) => {
         if (response.status === 200){
           toast.success("Mentor deleted successfully");
             
-            setTimeout(() => {
-                window.location.reload();
-            }, 2000)
+            fetchMentors();
         }
         
     } catch (error) {

@@ -10,24 +10,26 @@ function ViewUser() {
 
   useEffect(() => {
     // Fetch user data from the server
-    const fetchUsers = async () => {
-      try {
-        const response = await fetch("http://localhost:8081/users", {
-          method: "GET",
-          headers: {
-            "Content-Type": "application/json",
-          },
-        });
-        const allUsers = await response.json();
-        setUsers(allUsers);
-        console.log(allUsers);
-      } catch (error) {
-        console.error("Error fetching users:", error);
-      }
-    };
-
+    
     fetchUsers();
   }, []);
+
+
+  const fetchUsers = async () => {
+    try {
+      const response = await fetch("http://localhost:8081/users", {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
+      const allUsers = await response.json();
+      setUsers(allUsers);
+      console.log(allUsers);
+    } catch (error) {
+      console.error("Error fetching users:", error);
+    }
+  };
 
   // useEffect(() => {
   //   fetchUsers();
@@ -46,9 +48,9 @@ function ViewUser() {
       setUsers(deleteUser);
       // fetchUsers();
       if (response.status === 200) {
-        
+        console.log(response)
         toast.success("User deleted successfully");
-        
+        fetchUsers();
        
       }
       
