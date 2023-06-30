@@ -9,8 +9,8 @@ function Update() {
     const [userDetails, setUserDetails] = useState('');
  
 
-const handleToggle = async (user) => {
-    setUserDetails(user);
+const handleToggle = async (user_) => {
+    setUserDetails(user_);
  setShowEditForm(!showEditForm);
 }
 
@@ -28,7 +28,7 @@ const handleToggle = async (user) => {
             <AiFillEdit className='icon' onClick={() => handleToggle(user)}/>
 
             {
-            showEditForm && <UpdateForm setShowEditForm={setShowEditForm} users={userDetails}/>
+            showEditForm && <UpdateForm setShowEditForm={setShowEditForm} user_={userDetails}/>
             }
         </div>   
     </div>

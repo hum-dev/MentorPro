@@ -34,7 +34,7 @@ function ViewUser() {
   // }, []);
   const handleDelete = async (user_id) => {
     try {
-      const response = await fetch(`http://localhost:8081/mentor/${user_id}`, {
+      const response = await fetch(`http://localhost:8081/user/${user_id}`, {
         method: "DELETE",
         headers: {
           "Content-Type": "application/json",

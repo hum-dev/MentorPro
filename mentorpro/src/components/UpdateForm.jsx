@@ -1,87 +1,76 @@
-import { useEffect,useState, useContext} from 'react';
-import { toast } from 'react-toastify';
-import {Context} from '../../Context/userContext/Context'
-import "react-toastify/dist/ReactToastify.css";
-import './UpdateForm.css'
-
+import  { useEffect, useState, useContext } from 'react';
+import { Context } from './Context/userContext/Context';
 import PropTypes from 'prop-types';
+import { toast } from 'react-toastify';
 
-function UpdateForm({ setShowEditForm, users }) {
-    const { user} = useContext(Context)
-    // const { username, email, phone } = user;
-    const [userName, setUserName] = useState('');
-    const [useremail, setUserEmail] = useState('');
-    const [userPhone, setUserPhone] = useState('');
+import 'react-toastify/dist/ReactToastify.css';
+import './UpdateForm.css';
 
-  
+function UpdateForm({ setShowEditForm, user_ }) {
+    const { user } = useContext(Context);
+  const [userName, setUserName] = useState('');
+  const [userEmail, setUserEmail] = useState('');
+  const [userPhone, setUserPhone] = useState('');
 
- useEffect(() => {
-  
-       setUserName(user.username);
- 
- }, [user.username]);
+  useEffect(() => {
+    setUserName(user_.username);
+    setUserEmail(user_.email);
+    setUserPhone(user_.phone);
+    }, [user_]);
 
-useEffect(() => {
-  setUserEmail(user.email);
-}, []);
-useEffect(() => {
-    setUserPhone(user.phone);
-}, []);
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        
+        try {
+            const body = { userName, userEmail, userPhone };
+            console.log(body)
+            const response = await fetch(
+                `http://localhost:8081/user/${user.id}`,
+                {
+                    method: 'PUT',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(body),
 
-const handleSubmit = async (e) => {
-    e.preventDefault();
-try {
-  const response= await fetch(`http://localhost:8081/user/${user_id}`,{
-                method: 'PUT',
-                headers: {
-                    'Content-Type': 'application/json',
                 }
-            });
-            const updateUser = await response.json();
-            setUserName(updateUser);
-            setUserEmail(updateUser);
-            setUserPhone(updateUser);
-            if (response.status === 200){
-                toast.success("User updated successfully");
-                setTimeout(() => {
-                    window.location.reload();
-                }, 2000)
+            );
+            console.log(response)
+            if (response.status === 200) {
+                toast.success('User updated successfully');
             }
-    
-}
- catch (error) {
-    // console.error('Error updating user:', error);
-    toast.error("Error updating user");
-}
-// setShowEditForm(false);
-};
+        } catch (err) {
+            console.error(err.message);
+toast.error('Error updating user');
+        }
+    };
+
+ 
 
     return (
-        <div className='updateForm'>
-            <form className='form'>
+        <div className="updateForm">
+            <form className="form">
                 <input
-                    type='text'
+                    type="text"
                     value={userName}
-                    onChange={(e) => setUserName(e.target.value) } 
-                    name='username'
-                    id='username'
+                   onChange={(e) => setUserName( e.target.value )}
+                    name="username"
+                    id="username"
                 />
 
                 <input
-                    type='email'
-                    value={useremail}
-                    onChange={(e) => setUserEmail(e.target.value)}
-                    name='email'
+                    type="email"
+                    value={userEmail}
+                   onChange={(e) => setUserEmail( e.target.value )}
+                    name="email"
                 />
                 <input
-                    type='text'
+                    type="text"
                     value={userPhone}
-                    onChange={(e) => setUserPhone(e.target.value)}
-                    name='phone_number'
+                     onChange={(e) => setUserPhone( e.target.value )}
+                    name="phone_number"
                 />
 
                 <button onClick={() => setShowEditForm(false)}>exit</button>
-                <button type='submit' onClick={handleSubmit}>
+                <button type="submit" onClick={handleSubmit}>
                     Update
                 </button>
             </form>
@@ -91,14 +80,15 @@ try {
 
 UpdateForm.propTypes = {
     setShowEditForm: PropTypes.func.isRequired,
-    user: PropTypes.shape({
+    user_: PropTypes.shape({
         username: PropTypes.string.isRequired,
         email: PropTypes.string.isRequired,
         phone: PropTypes.string.isRequired,
     }).isRequired,
 };
 
+export default UpdateForm;
+                    
+               
 
-
-export default UpdateForm
-//
+    
